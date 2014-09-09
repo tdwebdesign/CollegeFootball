@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>NCAA 2014</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</head>
+
+<body>
+<h1>NCAA 2014</h1>
+
+<p>Download schedule data.</p>
+
+<pre><code class="r">theurl &lt;- &quot;http://fs.ncaa.org/Docs/stats/football_records/sched/2014/fbs.csv&quot;
+thefile &lt;- &quot;fbs2014schedule.csv&quot;
+if(!file.exists(thefile)) {
+download.file(theurl, destfile=thefile)
+}
+</code></pre>
+
+<p>read in data.  process, transform into tidy data for processing.</p>
+
+<pre><code class="r">data &lt;- read.csv(thefile)
+data$Date &lt;- as.Date(data$Date, &quot;%m/%d/%Y&quot;)
+data &lt;- data[!data$Div == &quot;&quot;,]
+neutral
+</code></pre>
+
+<pre><code>## Error: object &#39;neutral&#39; not found
+</code></pre>
+
+<pre><code class="r">data &lt;- data[data$Location == &quot;Home&quot; | data$Location == &quot;Neutral&quot;,]
+data
+</code></pre>
+
+<pre><code>##      Div Team.ID                Team Opp.ID                 Opp       Date
+## 1    FBS     721           Air Force    483        Nicholls St. 2014-08-30
+## 4    FBS     721           Air Force     66           Boise St. 2014-09-27
+## 5    FBS     721           Air Force    726                Navy 2014-10-04
+## 7    FBS     721           Air Force    473          New Mexico 2014-10-18
+## 10   FBS     721           Air Force    466              Nevada 2014-11-15
+## 12   FBS     721           Air Force    156        Colorado St. 2014-11-28
+## 13   FBS       5               Akron    290              Howard 2014-08-28
+## 15   FBS       5               Akron    388            Marshall 2014-09-20
+## 17   FBS       5               Akron    204       Eastern Mich. 2014-10-04
+## 18   FBS       5               Akron    414          Miami (OH) 2014-10-11
+## 21   FBS       5               Akron     71       Bowling Green 2014-11-04
+## 23   FBS       5               Akron    400       Massachusetts 2014-11-18
+## 25   FBS       8             Alabama    768       West Virginia 2014-08-30
+## 26   FBS       8             Alabama    229       Fla. Atlantic 2014-09-06
+## 27   FBS       8             Alabama    664      Southern Miss. 2014-09-13
+## 28   FBS       8             Alabama    235             Florida 2014-09-20
+## 31   FBS       8             Alabama    697           Texas A&amp;M 2014-10-18
+## 34   FBS       8             Alabama    430     Mississippi St. 2014-11-15
+## 35   FBS       8             Alabama    769       Western Caro. 2014-11-22
+## 36   FBS       8             Alabama     37              Auburn 2014-11-29
+## 37   FBS      29             Arizona    465                UNLV 2014-08-29
+## 39   FBS      29             Arizona    466              Nevada 2014-09-13
+## 40   FBS      29             Arizona    107          California 2014-09-20
+## 42   FBS      29             Arizona    657 Southern California 2014-10-11
+## 45   FBS      29             Arizona    157            Colorado 2014-11-08
+## 46   FBS      29             Arizona    756          Washington 2014-11-15
+## 48   FBS      29             Arizona     28         Arizona St. 2014-11-28
+## 49   FBS      28         Arizona St.    758           Weber St. 2014-08-28
+## 52   FBS      28         Arizona St.    110                UCLA 2014-09-25
+## 54   FBS      28         Arizona St.    674            Stanford 2014-10-18
+## 56   FBS      28         Arizona St.    732                Utah 2014-11-01
+## 57   FBS      28         Arizona St.    513          Notre Dame 2014-11-08
+## 59   FBS      28         Arizona St.    754      Washington St. 2014-11-22
+## 62   FBS      31            Arkansas    483        Nicholls St. 2014-09-06
+## 64   FBS      31            Arkansas    503       Northern Ill. 2014-09-20
+## 65   FBS      31            Arkansas    697           Texas A&amp;M 2014-09-27
+## 66   FBS      31            Arkansas      8             Alabama 2014-10-11
+## 67   FBS      31            Arkansas    257             Georgia 2014-10-18
+## 68   FBS      31            Arkansas      9                 UAB 2014-10-25
+## 70   FBS      31            Arkansas    365                 LSU 2014-11-15
+## 71   FBS      31            Arkansas    433            Ole Miss 2014-11-22
+## 73   FBS      30        Arkansas St.    440         Montana St. 2014-08-30
+## 76   FBS      30        Arkansas St.    731            Utah St. 2014-09-20
+## 77   FBS      30        Arkansas St.    498          La.-Monroe 2014-10-04
+## 81   FBS      30        Arkansas St.    646          South Ala. 2014-11-08
+## 82   FBS      30        Arkansas St.     27     Appalachian St. 2014-11-15
+## 84   FBS      30        Arkansas St.    472      New Mexico St. 2014-11-29
+## 85   FBS     725                Army     86             Buffalo 2014-09-06
+## 89   FBS     725                Army     47            Ball St. 2014-10-04
+## 90   FBS     725                Army    574                Rice 2014-10-11
+## 92   FBS     725                Army    721           Air Force 2014-11-01
+## 93   FBS     725                Army    164               UConn 2014-11-08
+## 95   FBS     725                Army    236             Fordham 2014-11-22
+## 96   FBS     725                Army    726                Navy 2014-12-13
+## 97   FBS      37              Auburn     31            Arkansas 2014-08-30
+## 98   FBS      37              Auburn    630        San Jose St. 2014-09-06
+## 100  FBS      37              Auburn    366      Louisiana Tech 2014-09-27
+## 101  FBS      37              Auburn    365                 LSU 2014-10-04
+## 103  FBS      37              Auburn    648      South Carolina 2014-10-25
+## 105  FBS      37              Auburn    697           Texas A&amp;M 2014-11-08
+## 107  FBS      37              Auburn    625             Samford 2014-11-22
+## 111  FBS      77                 BYU    288             Houston 2014-09-11
+## 112  FBS      77                 BYU    746            Virginia 2014-09-20
+## 113  FBS      77                 BYU    731            Utah St. 2014-10-03
+## 115  FBS      77                 BYU    466              Nevada 2014-10-18
+## 118  FBS      77                 BYU    465                UNLV 2014-11-15
+## 119  FBS      77                 BYU    632        Savannah St. 2014-11-22
+## 121  FBS      47            Ball St.    153             Colgate 2014-08-30
+## 123  FBS      47            Ball St.    305         Indiana St. 2014-09-13
+## 126  FBS      47            Ball St.    774       Western Mich. 2014-10-11
+## 128  FBS      47            Ball St.      5               Akron 2014-10-25
+## 129  FBS      47            Ball St.    503       Northern Ill. 2014-11-05
+## 131  FBS      47            Ball St.    204       Eastern Mich. 2014-11-22
+## 133  FBS      51              Baylor    663                 SMU 2014-08-31
+## 134  FBS      51              Baylor    508    Northwestern St. 2014-09-06
+## 138  FBS      51              Baylor    698                 TCU 2014-10-11
+## 140  FBS      51              Baylor    328              Kansas 2014-11-01
+## 142  FBS      51              Baylor    521        Oklahoma St. 2014-11-22
+## 143  FBS      51              Baylor    700          Texas Tech 2014-11-29
+## 144  FBS      51              Baylor    327          Kansas St. 2014-12-06
+## 145  FBS      66           Boise St.    433            Ole Miss 2014-08-28
+## 146  FBS      66           Boise St.    156        Colorado St. 2014-09-06
+## 148  FBS      66           Boise St.    671       La.-Lafayette 2014-09-20
+## 151  FBS      66           Boise St.     96          Fresno St. 2014-10-17
+## 152  FBS      66           Boise St.     77                 BYU 2014-10-24
+## 154  FBS      66           Boise St.    626       San Diego St. 2014-11-15
+## 156  FBS      66           Boise St.    731            Utah St. 2014-11-29
+## 158  FBS      67      Boston College    545          Pittsburgh 2014-09-05
+## 159  FBS      67      Boston College    657 Southern California 2014-09-13
+## 160  FBS      67      Boston College    380               Maine 2014-09-20
+## 161  FBS      67      Boston College    156        Colorado St. 2014-09-27
+## 163  FBS      67      Boston College    147             Clemson 2014-10-18
+## 166  FBS      67      Boston College    367          Louisville 2014-11-08
+## 168  FBS      67      Boston College    688            Syracuse 2014-11-29
+## 170  FBS      71       Bowling Green    741                 VMI 2014-09-06
+## 171  FBS      71       Bowling Green    306             Indiana 2014-09-13
+## 174  FBS      71       Bowling Green     86             Buffalo 2014-10-04
+## 176  FBS      71       Bowling Green    774       Western Mich. 2014-10-18
+## 178  FBS      71       Bowling Green    331            Kent St. 2014-11-12
+## 180  FBS      71       Bowling Green     47            Ball St. 2014-11-28
+## 181  FBS      86             Buffalo    194            Duquesne 2014-08-30
+## 183  FBS      86             Buffalo     51              Baylor 2014-09-12
+## 184  FBS      86             Buffalo    485         Norfolk St. 2014-09-20
+## 185  FBS      86             Buffalo    414          Miami (OH) 2014-09-27
+## 188  FBS      86             Buffalo    129       Central Mich. 2014-10-25
+## 190  FBS      86             Buffalo      5               Akron 2014-11-11
+## 191  FBS      86             Buffalo    331            Kent St. 2014-11-19
+## 194  FBS     107          California    102      Sacramento St. 2014-09-06
+## 196  FBS     107          California    157            Colorado 2014-09-27
+## 198  FBS     107          California    756          Washington 2014-10-11
+## 199  FBS     107          California    110                UCLA 2014-10-18
+## 200  FBS     107          California    529              Oregon 2014-10-24
+## 203  FBS     107          California    674            Stanford 2014-11-22
+## 204  FBS     107          California     77                 BYU 2014-11-29
+## 205  FBS     129       Central Mich.    693         Chattanooga 2014-08-28
+## 207  FBS     129       Central Mich.    688            Syracuse 2014-09-13
+## 210  FBS     129       Central Mich.    519                Ohio 2014-10-04
+## 212  FBS     129       Central Mich.     47            Ball St. 2014-10-18
+## 215  FBS     129       Central Mich.    414          Miami (OH) 2014-11-15
+## 216  FBS     129       Central Mich.    774       Western Mich. 2014-11-22
+## 217  FBS     140          Cincinnati    709              Toledo 2014-09-12
+## 218  FBS     140          Cincinnati    414          Miami (OH) 2014-09-20
+## 220  FBS     140          Cincinnati    404             Memphis 2014-10-04
+## 223  FBS     140          Cincinnati    651          South Fla. 2014-10-24
+## 225  FBS     140          Cincinnati    196       East Carolina 2014-11-13
+## 228  FBS     140          Cincinnati    288             Houston 2014-12-06
+## 230  FBS     147             Clemson    647  South Carolina St. 2014-09-06
+## 232  FBS     147             Clemson    457      North Carolina 2014-09-27
+## 233  FBS     147             Clemson    490  North Carolina St. 2014-10-04
+## 234  FBS     147             Clemson    367          Louisville 2014-10-11
+## 236  FBS     147             Clemson    688            Syracuse 2014-10-25
+## 239  FBS     147             Clemson    254         Georgia St. 2014-11-22
+## 240  FBS     147             Clemson    648      South Carolina 2014-11-29
+## 241  FBS     157            Colorado    156        Colorado St. 2014-08-29
+## 243  FBS     157            Colorado     28         Arizona St. 2014-09-13
+## 244  FBS     157            Colorado    277              Hawaii 2014-09-20
+## 246  FBS     157            Colorado    528          Oregon St. 2014-10-04
+## 248  FBS     157            Colorado    110                UCLA 2014-10-25
+## 249  FBS     157            Colorado    756          Washington 2014-11-01
+## 252  FBS     157            Colorado    732                Utah 2014-11-29
+## 253  FBS     156        Colorado St.    157            Colorado 2014-08-29
+## 255  FBS     156        Colorado St.    108            UC Davis 2014-09-13
+## 257  FBS     156        Colorado St.    719               Tulsa 2014-10-04
+## 259  FBS     156        Colorado St.    731            Utah St. 2014-10-18
+## 260  FBS     156        Colorado St.    811             Wyoming 2014-10-25
+## 262  FBS     156        Colorado St.    277              Hawaii 2014-11-08
+## 263  FBS     156        Colorado St.    473          New Mexico 2014-11-22
+## 265  FBS     193                Duke   1068                Elon 2014-08-30
+## 267  FBS     193                Duke    328              Kansas 2014-09-13
+## 268  FBS     193                Duke    718              Tulane 2014-09-20
+## 271  FBS     193                Duke    746            Virginia 2014-10-18
+## 274  FBS     193                Duke    742       Virginia Tech 2014-11-15
+## 275  FBS     193                Duke    457      North Carolina 2014-11-20
+## 276  FBS     193                Duke    749         Wake Forest 2014-11-29
+## 277  FBS     196       East Carolina    489        N.C. Central 2014-08-30
+## 280  FBS     196       East Carolina    457      North Carolina 2014-09-20
+## 281  FBS     196       East Carolina    663                 SMU 2014-10-04
+## 283  FBS     196       East Carolina    164               UConn 2014-10-23
+## 286  FBS     196       East Carolina    718              Tulane 2014-11-22
+## 288  FBS     196       East Carolina    128                 UCF 2014-12-04
+## 289  FBS     204       Eastern Mich.    446          Morgan St. 2014-08-30
+## 294  FBS     204       Eastern Mich.     86             Buffalo 2014-10-11
+## 296  FBS     204       Eastern Mich.    503       Northern Ill. 2014-10-25
+## 297  FBS     204       Eastern Mich.    129       Central Mich. 2014-11-01
+## 300  FBS     204       Eastern Mich.    709              Toledo 2014-11-28
+## 301  FBS     231                 FIU     61     Bethune-Cookman 2014-08-30
+## 302  FBS     231                 FIU    748              Wagner 2014-09-06
+## 303  FBS     231                 FIU    545          Pittsburgh 2014-09-13
+## 304  FBS     231                 FIU    367          Louisville 2014-09-20
+## 306  FBS     231                 FIU    229       Fla. Atlantic 2014-10-02
+## 308  FBS     231                 FIU    388            Marshall 2014-10-18
+## 309  FBS     231                 FIU    574                Rice 2014-11-01
+## 311  FBS     231                 FIU    419        Middle Tenn. 2014-11-15
+## 315  FBS     229       Fla. Atlantic    719               Tulsa 2014-09-13
+## 317  FBS     229       Fla. Atlantic    706                UTSA 2014-09-27
+## 319  FBS     229       Fla. Atlantic    772         Western Ky. 2014-10-18
+## 321  FBS     229       Fla. Atlantic      9                 UAB 2014-11-01
+## 324  FBS     229       Fla. Atlantic    523        Old Dominion 2014-11-29
+## 325  FBS     235             Florida    295               Idaho 2014-08-30
+## 326  FBS     235             Florida    204       Eastern Mich. 2014-09-06
+## 327  FBS     235             Florida    334            Kentucky 2014-09-13
+## 330  FBS     235             Florida    365                 LSU 2014-10-11
+## 331  FBS     235             Florida    434            Missouri 2014-10-18
+## 332  FBS     235             Florida    257             Georgia 2014-11-01
+## 334  FBS     235             Florida    648      South Carolina 2014-11-15
+## 335  FBS     235             Florida    202         Eastern Ky. 2014-11-22
+## 337  FBS     234         Florida St.    521        Oklahoma St. 2014-08-30
+## 338  FBS     234         Florida St.    141             Citadel 2014-09-06
+## 339  FBS     234         Florida St.    147             Clemson 2014-09-20
+## 341  FBS     234         Florida St.    749         Wake Forest 2014-10-04
+## 343  FBS     234         Florida St.    513          Notre Dame 2014-10-18
+## 345  FBS     234         Florida St.    746            Virginia 2014-11-08
+## 347  FBS     234         Florida St.     67      Boston College 2014-11-22
+## 348  FBS     234         Florida St.    235             Florida 2014-11-29
+## 351  FBS      96          Fresno St.    463            Nebraska 2014-09-13
+## 352  FBS      96          Fresno St.    667       Southern Utah 2014-09-20
+## 354  FBS      96          Fresno St.    626       San Diego St. 2014-10-03
+## 357  FBS      96          Fresno St.    811             Wyoming 2014-11-01
+## 358  FBS      96          Fresno St.    630        San Jose St. 2014-11-08
+## 360  FBS      96          Fresno St.    277              Hawaii 2014-11-29
+## 361  FBS     257             Georgia    147             Clemson 2014-08-30
+## 363  FBS     257             Georgia    716                Troy 2014-09-20
+## 364  FBS     257             Georgia    694           Tennessee 2014-09-27
+## 365  FBS     257             Georgia    736          Vanderbilt 2014-10-04
+## 368  FBS     257             Georgia    235             Florida 2014-11-01
+## 370  FBS     257             Georgia     37              Auburn 2014-11-15
+## 371  FBS     257             Georgia     48      Charleston So. 2014-11-22
+## 372  FBS     257             Georgia    255        Georgia Tech 2014-11-29
+## 373  FBS     255        Georgia Tech   2915             Wofford 2014-08-30
+## 375  FBS     255        Georgia Tech    253        Ga. Southern 2014-09-13
+## 377  FBS     255        Georgia Tech    415          Miami (FL) 2014-10-04
+## 378  FBS     255        Georgia Tech    193                Duke 2014-10-11
+## 381  FBS     255        Georgia Tech    746            Virginia 2014-11-01
+## 383  FBS     255        Georgia Tech    147             Clemson 2014-11-15
+## 385  FBS     277              Hawaii    756          Washington 2014-08-30
+## 386  FBS     277              Hawaii    528          Oregon St. 2014-09-06
+## 387  FBS     277              Hawaii    504                 UNI 2014-09-13
+## 390  FBS     277              Hawaii    811             Wyoming 2014-10-11
+## 392  FBS     277              Hawaii    466              Nevada 2014-10-25
+## 393  FBS     277              Hawaii    731            Utah St. 2014-11-01
+## 396  FBS     277              Hawaii    465                UNLV 2014-11-22
+## 398  FBS     288             Houston    706                UTSA 2014-08-29
+## 399  FBS     288             Houston    261           Grambling 2014-09-06
+## 401  FBS     288             Houston    465                UNLV 2014-09-20
+## 402  FBS     288             Houston    128                 UCF 2014-10-02
+## 404  FBS     288             Houston    690              Temple 2014-10-17
+## 406  FBS     288             Houston    718              Tulane 2014-11-08
+## 407  FBS     288             Houston    719               Tulsa 2014-11-22
+## 412  FBS     295               Idaho    774       Western Mich. 2014-09-13
+## 414  FBS     295               Idaho    646          South Ala. 2014-09-27
+## 417  FBS     295               Idaho    472      New Mexico St. 2014-10-18
+## 418  FBS     295               Idaho     30        Arkansas St. 2014-11-01
+## 420  FBS     295               Idaho    716                Troy 2014-11-15
+## 422  FBS     301            Illinois    817      Youngstown St. 2014-08-30
+## 423  FBS     301            Illinois    772         Western Ky. 2014-09-06
+## 425  FBS     301            Illinois    670           Texas St. 2014-09-20
+## 427  FBS     301            Illinois    559              Purdue 2014-10-04
+## 429  FBS     301            Illinois    428           Minnesota 2014-10-25
+## 431  FBS     301            Illinois    312                Iowa 2014-11-15
+## 432  FBS     301            Illinois    539            Penn St. 2014-11-22
+## 434  FBS     306             Indiana    305         Indiana St. 2014-08-30
+## 437  FBS     306             Indiana    392            Maryland 2014-09-27
+## 438  FBS     306             Indiana    497         North Texas 2014-10-04
+## 440  FBS     306             Indiana    416        Michigan St. 2014-10-18
+## 442  FBS     306             Indiana    539            Penn St. 2014-11-08
+## 445  FBS     306             Indiana    559              Purdue 2014-11-29
+## 446  FBS     312                Iowa    504                 UNI 2014-08-30
+## 447  FBS     312                Iowa     47            Ball St. 2014-09-06
+## 448  FBS     312                Iowa    311            Iowa St. 2014-09-13
+## 451  FBS     312                Iowa    306             Indiana 2014-10-11
+## 453  FBS     312                Iowa    509        Northwestern 2014-11-01
+## 456  FBS     312                Iowa    796           Wisconsin 2014-11-22
+## 457  FBS     312                Iowa    463            Nebraska 2014-11-28
+## 458  FBS     311            Iowa St.    493    North Dakota St. 2014-08-30
+## 459  FBS     311            Iowa St.    327          Kansas St. 2014-09-06
+## 461  FBS     311            Iowa St.     51              Baylor 2014-09-27
+## 463  FBS     311            Iowa St.    709              Toledo 2014-10-11
+## 465  FBS     311            Iowa St.    522            Oklahoma 2014-11-01
+## 467  FBS     311            Iowa St.    700          Texas Tech 2014-11-22
+## 468  FBS     311            Iowa St.    768       West Virginia 2014-11-29
+## 470  FBS     328              Kansas    654   Southeast Mo. St. 2014-09-06
+## 472  FBS     328              Kansas    129       Central Mich. 2014-09-20
+## 473  FBS     328              Kansas    703               Texas 2014-09-27
+## 475  FBS     328              Kansas    521        Oklahoma St. 2014-10-11
+## 478  FBS     328              Kansas    311            Iowa St. 2014-11-08
+## 479  FBS     328              Kansas    698                 TCU 2014-11-15
+## 482  FBS     327          Kansas St.    676   Stephen F. Austin 2014-08-30
+## 484  FBS     327          Kansas St.     37              Auburn 2014-09-18
+## 485  FBS     327          Kansas St.    704                UTEP 2014-09-27
+## 486  FBS     327          Kansas St.    700          Texas Tech 2014-10-04
+## 488  FBS     327          Kansas St.    703               Texas 2014-10-25
+## 489  FBS     327          Kansas St.    521        Oklahoma St. 2014-11-01
+## 492  FBS     327          Kansas St.    328              Kansas 2014-11-29
+## 494  FBS     331            Kent St.    519                Ohio 2014-08-30
+## 495  FBS     331            Kent St.    646          South Ala. 2014-09-06
+## 499  FBS     331            Kent St.    400       Massachusetts 2014-10-11
+## 500  FBS     331            Kent St.    725                Army 2014-10-18
+## 502  FBS     331            Kent St.    709              Toledo 2014-11-04
+## 505  FBS     331            Kent St.      5               Akron 2014-11-25
+## 506  FBS     334            Kentucky    695           UT Martin 2014-08-30
+## 507  FBS     334            Kentucky    519                Ohio 2014-09-06
+## 509  FBS     334            Kentucky    736          Vanderbilt 2014-09-27
+## 510  FBS     334            Kentucky    648      South Carolina 2014-10-04
+## 511  FBS     334            Kentucky    498          La.-Monroe 2014-10-11
+## 513  FBS     334            Kentucky    430     Mississippi St. 2014-10-25
+## 515  FBS     334            Kentucky    257             Georgia 2014-11-08
+## 518  FBS     365                 LSU    796           Wisconsin 2014-08-30
+## 519  FBS     365                 LSU    624     Sam Houston St. 2014-09-06
+## 520  FBS     365                 LSU    498          La.-Monroe 2014-09-13
+## 521  FBS     365                 LSU    430     Mississippi St. 2014-09-20
+## 522  FBS     365                 LSU    472      New Mexico St. 2014-09-27
+## 525  FBS     365                 LSU    334            Kentucky 2014-10-18
+## 526  FBS     365                 LSU    433            Ole Miss 2014-10-25
+## 527  FBS     365                 LSU      8             Alabama 2014-11-08
+## 530  FBS     671       La.-Lafayette    665         Southern U. 2014-08-30
+## 531  FBS     671       La.-Lafayette    366      Louisiana Tech 2014-09-06
+## 534  FBS     671       La.-Lafayette    254         Georgia St. 2014-10-04
+## 536  FBS     671       La.-Lafayette     30        Arkansas St. 2014-10-21
+## 537  FBS     671       La.-Lafayette    646          South Ala. 2014-11-01
+## 540  FBS     671       La.-Lafayette     27     Appalachian St. 2014-11-22
+## 542  FBS     498          La.-Monroe    749         Wake Forest 2014-08-28
+## 543  FBS     498          La.-Monroe    295               Idaho 2014-09-06
+## 545  FBS     498          La.-Monroe    716                Troy 2014-09-27
+## 548  FBS     498          La.-Monroe    670           Texas St. 2014-10-25
+## 551  FBS     498          La.-Monroe    671       La.-Lafayette 2014-11-15
+## 557  FBS     366      Louisiana Tech    508    Northwestern St. 2014-09-20
+## 559  FBS     366      Louisiana Tech    704                UTEP 2014-10-04
+## 560  FBS     366      Louisiana Tech    706                UTSA 2014-10-18
+## 562  FBS     366      Louisiana Tech    772         Western Ky. 2014-11-01
+## 565  FBS     366      Louisiana Tech    574                Rice 2014-11-29
+## 566  FBS     367          Louisville    415          Miami (FL) 2014-09-01
+## 567  FBS     367          Louisville    454          Murray St. 2014-09-06
+## 570  FBS     367          Louisville    749         Wake Forest 2014-09-27
+## 573  FBS     367          Louisville    490  North Carolina St. 2014-10-18
+## 574  FBS     367          Louisville    234         Florida St. 2014-10-30
+## 577  FBS     367          Louisville    334            Kentucky 2014-11-29
+## 579  FBS     388            Marshall    572        Rhode Island 2014-09-06
+## 580  FBS     388            Marshall    519                Ohio 2014-09-13
+## 583  FBS     388            Marshall    419        Middle Tenn. 2014-10-11
+## 585  FBS     388            Marshall    229       Fla. Atlantic 2014-10-25
+## 587  FBS     388            Marshall    574                Rice 2014-11-15
+## 589  FBS     388            Marshall    772         Western Ky. 2014-11-28
+## 590  FBS     392            Maryland    317       James Madison 2014-08-30
+## 592  FBS     392            Maryland    768       West Virginia 2014-09-13
+## 595  FBS     392            Maryland    518            Ohio St. 2014-10-04
+## 596  FBS     392            Maryland    312                Iowa 2014-10-18
+## 599  FBS     392            Maryland    416        Michigan St. 2014-11-15
+## 601  FBS     392            Maryland    587             Rutgers 2014-11-29
+## 602  FBS     400       Massachusetts     67      Boston College 2014-08-30
+## 603  FBS     400       Massachusetts    157            Colorado 2014-09-06
+## 606  FBS     400       Massachusetts     71       Bowling Green 2014-09-27
+## 609  FBS     400       Massachusetts    204       Eastern Mich. 2014-10-18
+## 611  FBS     400       Massachusetts     47            Ball St. 2014-11-12
+## 613  FBS     400       Massachusetts     86             Buffalo 2014-11-28
+## 614  FBS     404             Memphis     43         Austin Peay 2014-08-30
+## 616  FBS     404             Memphis    419        Middle Tenn. 2014-09-20
+## 619  FBS     404             Memphis    288             Houston 2014-10-11
+## 621  FBS     404             Memphis    719               Tulsa 2014-10-31
+## 624  FBS     404             Memphis    651          South Fla. 2014-11-22
+## 625  FBS     404             Memphis    164               UConn 2014-11-29
+## 627  FBS     415          Miami (FL)    228         Florida A&amp;M 2014-09-06
+## 628  FBS     415          Miami (FL)     30        Arkansas St. 2014-09-13
+## 630  FBS     415          Miami (FL)    193                Duke 2014-09-27
+## 632  FBS     415          Miami (FL)    140          Cincinnati 2014-10-11
+## 634  FBS     415          Miami (FL)    457      North Carolina 2014-11-01
+## 635  FBS     415          Miami (FL)    234         Florida St. 2014-11-15
+## 637  FBS     415          Miami (FL)    545          Pittsburgh 2014-11-29
+## 638  FBS     414          Miami (OH)    388            Marshall 2014-08-30
+## 639  FBS     414          Miami (OH)    202         Eastern Ky. 2014-09-06
+## 643  FBS     414          Miami (OH)    400       Massachusetts 2014-10-04
+## 646  FBS     414          Miami (OH)    331            Kent St. 2014-10-25
+## 647  FBS     414          Miami (OH)    774       Western Mich. 2014-11-01
+## 649  FBS     414          Miami (OH)    519                Ohio 2014-11-25
+## 650  FBS     418            Michigan     27     Appalachian St. 2014-08-30
+## 652  FBS     418            Michigan    414          Miami (OH) 2014-09-13
+## 653  FBS     418            Michigan    732                Utah 2014-09-20
+## 654  FBS     418            Michigan    428           Minnesota 2014-09-27
+## 656  FBS     418            Michigan    539            Penn St. 2014-10-11
+## 658  FBS     418            Michigan    306             Indiana 2014-11-01
+## 660  FBS     418            Michigan    392            Maryland 2014-11-22
+## 662  FBS     416        Michigan St.    315    Jacksonville St. 2014-08-29
+## 664  FBS     416        Michigan St.    204       Eastern Mich. 2014-09-20
+## 665  FBS     416        Michigan St.    811             Wyoming 2014-09-27
+## 666  FBS     416        Michigan St.    463            Nebraska 2014-10-04
+## 669  FBS     416        Michigan St.    418            Michigan 2014-10-25
+## 670  FBS     416        Michigan St.    518            Ohio St. 2014-11-08
+## 672  FBS     416        Michigan St.    587             Rutgers 2014-11-22
+## 674  FBS     419        Middle Tenn.    632        Savannah St. 2014-08-30
+## 676  FBS     419        Middle Tenn.    772         Western Ky. 2014-09-13
+## 679  FBS     419        Middle Tenn.    664      Southern Miss. 2014-10-04
+## 681  FBS     419        Middle Tenn.      9                 UAB 2014-10-18
+## 682  FBS     419        Middle Tenn.     77                 BYU 2014-11-01
+## 684  FBS     419        Middle Tenn.    229       Fla. Atlantic 2014-11-22
+## 686  FBS     428           Minnesota    201        Eastern Ill. 2014-08-28
+## 687  FBS     428           Minnesota    419        Middle Tenn. 2014-09-06
+## 689  FBS     428           Minnesota    630        San Jose St. 2014-09-20
+## 691  FBS     428           Minnesota    509        Northwestern 2014-10-11
+## 692  FBS     428           Minnesota    559              Purdue 2014-10-18
+## 694  FBS     428           Minnesota    312                Iowa 2014-11-08
+## 695  FBS     428           Minnesota    518            Ohio St. 2014-11-15
+## 698  FBS     430     Mississippi St.    664      Southern Miss. 2014-08-30
+## 699  FBS     430     Mississippi St.      9                 UAB 2014-09-06
+## 702  FBS     430     Mississippi St.    697           Texas A&amp;M 2014-10-04
+## 703  FBS     430     Mississippi St.     37              Auburn 2014-10-11
+## 705  FBS     430     Mississippi St.     31            Arkansas 2014-11-01
+## 706  FBS     430     Mississippi St.    695           UT Martin 2014-11-08
+## 708  FBS     430     Mississippi St.    736          Vanderbilt 2014-11-22
+## 710  FBS     434            Missouri    649    South Dakota St. 2014-08-30
+## 712  FBS     434            Missouri    128                 UCF 2014-09-13
+## 713  FBS     434            Missouri    306             Indiana 2014-09-20
+## 715  FBS     434            Missouri    257             Georgia 2014-10-11
+## 717  FBS     434            Missouri    736          Vanderbilt 2014-10-25
+## 718  FBS     434            Missouri    334            Kentucky 2014-11-01
+## 721  FBS     434            Missouri     31            Arkansas 2014-11-28
+## 722  FBS     726                Navy    518            Ohio St. 2014-08-30
+## 725  FBS     726                Navy    587             Rutgers 2014-09-20
+## 726  FBS     726                Navy    772         Western Ky. 2014-09-27
+## 728  FBS     726                Navy    741                 VMI 2014-10-11
+## 729  FBS     726                Navy    630        San Jose St. 2014-10-25
+## 730  FBS     726                Navy    513          Notre Dame 2014-11-01
+## 731  FBS     726                Navy    253        Ga. Southern 2014-11-15
+## 733  FBS     726                Navy    725                Army 2014-12-13
+## 734  FBS     463            Nebraska    229       Fla. Atlantic 2014-08-30
+## 735  FBS     463            Nebraska    402         McNeese St. 2014-09-06
+## 737  FBS     463            Nebraska    415          Miami (FL) 2014-09-20
+## 738  FBS     463            Nebraska    301            Illinois 2014-09-27
+## 741  FBS     463            Nebraska    587             Rutgers 2014-10-25
+## 742  FBS     463            Nebraska    559              Purdue 2014-11-01
+## 744  FBS     463            Nebraska    428           Minnesota 2014-11-22
+## 746  FBS     466              Nevada    667       Southern Utah 2014-08-30
+## 747  FBS     466              Nevada    754      Washington St. 2014-09-05
+## 750  FBS     466              Nevada     66           Boise St. 2014-10-04
+## 751  FBS     466              Nevada    156        Colorado St. 2014-10-11
+## 754  FBS     466              Nevada    626       San Diego St. 2014-11-01
+## 756  FBS     466              Nevada     96          Fresno St. 2014-11-22
+## 758  FBS     473          New Mexico    704                UTEP 2014-08-30
+## 759  FBS     473          New Mexico     28         Arizona St. 2014-09-06
+## 761  FBS     473          New Mexico     96          Fresno St. 2014-09-26
+## 763  FBS     473          New Mexico    626       San Diego St. 2014-10-10
+## 766  FBS     473          New Mexico     66           Boise St. 2014-11-08
+## 769  FBS     473          New Mexico    811             Wyoming 2014-11-29
+## 770  FBS     472      New Mexico St.     90            Cal Poly 2014-08-28
+## 773  FBS     472      New Mexico St.    473          New Mexico 2014-09-20
+## 775  FBS     472      New Mexico St.    253        Ga. Southern 2014-10-04
+## 778  FBS     472      New Mexico St.    670           Texas St. 2014-11-01
+## 779  FBS     472      New Mexico St.    671       La.-Lafayette 2014-11-08
+## 780  FBS     472      New Mexico St.    498          La.-Monroe 2014-11-22
+## 782  FBS     457      North Carolina    355             Liberty 2014-08-30
+## 783  FBS     457      North Carolina    626       San Diego St. 2014-09-06
+## 786  FBS     457      North Carolina    742       Virginia Tech 2014-10-04
+## 788  FBS     457      North Carolina    255        Georgia Tech 2014-10-18
+## 791  FBS     457      North Carolina    545          Pittsburgh 2014-11-15
+## 793  FBS     457      North Carolina    490  North Carolina St. 2014-11-29
+## 794  FBS     490  North Carolina St.    253        Ga. Southern 2014-08-30
+## 795  FBS     490  North Carolina St.    523        Old Dominion 2014-09-06
+## 797  FBS     490  North Carolina St.   1320        Presbyterian 2014-09-20
+## 798  FBS     490  North Carolina St.    234         Florida St. 2014-09-27
+## 800  FBS     490  North Carolina St.     67      Boston College 2014-10-11
+## 803  FBS     490  North Carolina St.    255        Georgia Tech 2014-11-08
+## 804  FBS     490  North Carolina St.    749         Wake Forest 2014-11-15
+## 807  FBS     497         North Texas    663                 SMU 2014-09-06
+## 808  FBS     497         North Texas    366      Louisiana Tech 2014-09-11
+## 809  FBS     497         North Texas    483        Nicholls St. 2014-09-20
+## 812  FBS     497         North Texas    664      Southern Miss. 2014-10-18
+## 814  FBS     497         North Texas    229       Fla. Atlantic 2014-11-08
+## 816  FBS     497         North Texas    231                 FIU 2014-11-22
+## 818  FBS     503       Northern Ill.   1320        Presbyterian 2014-08-28
+## 822  FBS     503       Northern Ill.    331            Kent St. 2014-10-04
+## 823  FBS     503       Northern Ill.    129       Central Mich. 2014-10-11
+## 824  FBS     503       Northern Ill.    414          Miami (OH) 2014-10-18
+## 827  FBS     503       Northern Ill.    709              Toledo 2014-11-11
+## 830  FBS     509        Northwestern    107          California 2014-08-30
+## 831  FBS     509        Northwestern    503       Northern Ill. 2014-09-06
+## 832  FBS     509        Northwestern    771        Western Ill. 2014-09-20
+## 834  FBS     509        Northwestern    796           Wisconsin 2014-10-04
+## 836  FBS     509        Northwestern    463            Nebraska 2014-10-18
+## 838  FBS     509        Northwestern    418            Michigan 2014-11-08
+## 841  FBS     509        Northwestern    301            Illinois 2014-11-29
+## 842  FBS     513          Notre Dame    574                Rice 2014-08-30
+## 843  FBS     513          Notre Dame    418            Michigan 2014-09-06
+## 844  FBS     513          Notre Dame    559              Purdue 2014-09-13
+## 845  FBS     513          Notre Dame    688            Syracuse 2014-09-27
+## 846  FBS     513          Notre Dame    674            Stanford 2014-10-04
+## 847  FBS     513          Notre Dame    457      North Carolina 2014-10-11
+## 849  FBS     513          Notre Dame    726                Navy 2014-11-01
+## 851  FBS     513          Notre Dame    509        Northwestern 2014-11-15
+## 852  FBS     513          Notre Dame    367          Louisville 2014-11-22
+## 857  FBS     519                Ohio    295               Idaho 2014-09-20
+## 858  FBS     519                Ohio    201        Eastern Ill. 2014-09-27
+## 860  FBS     519                Ohio     71       Bowling Green 2014-10-11
+## 861  FBS     519                Ohio      5               Akron 2014-10-18
+## 863  FBS     519                Ohio     86             Buffalo 2014-11-05
+## 864  FBS     519                Ohio    503       Northern Ill. 2014-11-18
+## 866  FBS     518            Ohio St.    726                Navy 2014-08-30
+## 867  FBS     518            Ohio St.    742       Virginia Tech 2014-09-06
+## 868  FBS     518            Ohio St.    331            Kent St. 2014-09-13
+## 869  FBS     518            Ohio St.    140          Cincinnati 2014-09-27
+## 871  FBS     518            Ohio St.    587             Rutgers 2014-10-18
+## 873  FBS     518            Ohio St.    301            Illinois 2014-11-01
+## 876  FBS     518            Ohio St.    306             Indiana 2014-11-22
+## 877  FBS     518            Ohio St.    418            Michigan 2014-11-29
+## 878  FBS     522            Oklahoma    366      Louisiana Tech 2014-08-30
+## 880  FBS     522            Oklahoma    694           Tennessee 2014-09-13
+## 883  FBS     522            Oklahoma    703               Texas 2014-10-11
+## 884  FBS     522            Oklahoma    327          Kansas St. 2014-10-18
+## 886  FBS     522            Oklahoma     51              Baylor 2014-11-08
+## 888  FBS     522            Oklahoma    328              Kansas 2014-11-22
+## 889  FBS     522            Oklahoma    521        Oklahoma St. 2014-12-06
+## 890  FBS     521        Oklahoma St.    234         Florida St. 2014-08-30
+## 891  FBS     521        Oklahoma St.    669        Missouri St. 2014-09-06
+## 892  FBS     521        Oklahoma St.    706                UTSA 2014-09-13
+## 893  FBS     521        Oklahoma St.    700          Texas Tech 2014-09-25
+## 894  FBS     521        Oklahoma St.    311            Iowa St. 2014-10-04
+## 897  FBS     521        Oklahoma St.    768       West Virginia 2014-10-25
+## 899  FBS     521        Oklahoma St.    703               Texas 2014-11-15
+## 902  FBS     433            Ole Miss     66           Boise St. 2014-08-28
+## 903  FBS     433            Ole Miss    736          Vanderbilt 2014-09-06
+## 904  FBS     433            Ole Miss    671       La.-Lafayette 2014-09-13
+## 905  FBS     433            Ole Miss    404             Memphis 2014-09-27
+## 906  FBS     433            Ole Miss      8             Alabama 2014-10-04
+## 908  FBS     433            Ole Miss    694           Tennessee 2014-10-18
+## 910  FBS     433            Ole Miss     37              Auburn 2014-11-01
+## 911  FBS     433            Ole Miss   1320        Presbyterian 2014-11-08
+## 913  FBS     433            Ole Miss    430     Mississippi St. 2014-11-29
+## 914  FBS     529              Oregon    650        South Dakota 2014-08-30
+## 915  FBS     529              Oregon    416        Michigan St. 2014-09-06
+## 916  FBS     529              Oregon    811             Wyoming 2014-09-13
+## 918  FBS     529              Oregon     29             Arizona 2014-10-02
+## 920  FBS     529              Oregon    756          Washington 2014-10-18
+## 921  FBS     529              Oregon    107          California 2014-10-24
+## 922  FBS     529              Oregon    674            Stanford 2014-11-01
+## 924  FBS     529              Oregon    157            Colorado 2014-11-22
+## 926  FBS     528          Oregon St.    550        Portland St. 2014-08-30
+## 928  FBS     528          Oregon St.    626       San Diego St. 2014-09-20
+## 931  FBS     528          Oregon St.    732                Utah 2014-10-16
+## 933  FBS     528          Oregon St.    107          California 2014-11-01
+## 934  FBS     528          Oregon St.    754      Washington St. 2014-11-08
+## 935  FBS     528          Oregon St.     28         Arizona St. 2014-11-15
+## 937  FBS     528          Oregon St.    529              Oregon 2014-11-29
+## 938  FBS     539            Penn St.    128                 UCF 2014-08-30
+## 939  FBS     539            Penn St.      5               Akron 2014-09-06
+## 941  FBS     539            Penn St.    400       Massachusetts 2014-09-20
+## 942  FBS     539            Penn St.    509        Northwestern 2014-09-27
+## 944  FBS     539            Penn St.    518            Ohio St. 2014-10-25
+## 945  FBS     539            Penn St.    392            Maryland 2014-11-01
+## 947  FBS     539            Penn St.    690              Temple 2014-11-15
+## 949  FBS     539            Penn St.    416        Michigan St. 2014-11-29
+## 950  FBS     545          Pittsburgh    180            Delaware 2014-08-30
+## 953  FBS     545          Pittsburgh    312                Iowa 2014-09-20
+## 954  FBS     545          Pittsburgh      5               Akron 2014-09-27
+## 956  FBS     545          Pittsburgh    742       Virginia Tech 2014-10-16
+## 957  FBS     545          Pittsburgh    255        Georgia Tech 2014-10-25
+## 958  FBS     545          Pittsburgh    193                Duke 2014-11-01
+## 960  FBS     545          Pittsburgh    688            Syracuse 2014-11-22
+## 962  FBS     559              Purdue    774       Western Mich. 2014-08-30
+## 963  FBS     559              Purdue    129       Central Mich. 2014-09-06
+## 964  FBS     559              Purdue    513          Notre Dame 2014-09-13
+## 965  FBS     559              Purdue    659       Southern Ill. 2014-09-20
+## 966  FBS     559              Purdue    312                Iowa 2014-09-27
+## 968  FBS     559              Purdue    416        Michigan St. 2014-10-11
+## 971  FBS     559              Purdue    796           Wisconsin 2014-11-08
+## 972  FBS     559              Purdue    509        Northwestern 2014-11-22
+## 976  FBS     574                Rice    523        Old Dominion 2014-09-20
+## 978  FBS     574                Rice    277              Hawaii 2014-10-04
+## 980  FBS     574                Rice    497         North Texas 2014-10-25
+## 982  FBS     574                Rice    706                UTSA 2014-11-08
+## 984  FBS     574                Rice    704                UTEP 2014-11-21
+## 986  FBS     587             Rutgers    754      Washington St. 2014-08-28
+## 987  FBS     587             Rutgers    290              Howard 2014-09-06
+## 988  FBS     587             Rutgers    539            Penn St. 2014-09-13
+## 990  FBS     587             Rutgers    718              Tulane 2014-09-27
+## 991  FBS     587             Rutgers    418            Michigan 2014-10-04
+## 994  FBS     587             Rutgers    796           Wisconsin 2014-11-01
+## 995  FBS     587             Rutgers    306             Indiana 2014-11-15
+## 1000 FBS     663                 SMU    697           Texas A&amp;M 2014-09-20
+## 1001 FBS     663                 SMU    698                 TCU 2014-09-27
+## 1003 FBS     663                 SMU    140          Cincinnati 2014-10-18
+## 1004 FBS     663                 SMU    404             Memphis 2014-10-25
+## 1006 FBS     663                 SMU    651          South Fla. 2014-11-15
+## 1008 FBS     663                 SMU    288             Houston 2014-11-28
+## 1010 FBS     626       San Diego St.    501      Northern Ariz. 2014-08-30
+## 1013 FBS     626       San Diego St.    465                UNLV 2014-09-27
+## 1016 FBS     626       San Diego St.    277              Hawaii 2014-10-18
+## 1018 FBS     626       San Diego St.    295               Idaho 2014-11-08
+## 1020 FBS     626       San Diego St.    721           Air Force 2014-11-21
+## 1021 FBS     626       San Diego St.    630        San Jose St. 2014-11-29
+## 1022 FBS     630        San Jose St.    494        North Dakota 2014-08-28
+## 1025 FBS     630        San Jose St.    466              Nevada 2014-09-27
+## 1026 FBS     630        San Jose St.    465                UNLV 2014-10-04
+## 1029 FBS     630        San Jose St.    156        Colorado St. 2014-11-01
+## 1031 FBS     630        San Jose St.    277              Hawaii 2014-11-15
+## 1035 FBS     646          South Ala.    430     Mississippi St. 2014-09-13
+## 1036 FBS     646          South Ala.    253        Ga. Southern 2014-09-20
+## 1039 FBS     646          South Ala.    254         Georgia St. 2014-10-18
+## 1040 FBS     646          South Ala.    716                Troy 2014-10-24
+## 1043 FBS     646          South Ala.    670           Texas St. 2014-11-15
+## 1045 FBS     646          South Ala.    726                Navy 2014-11-28
+## 1046 FBS     648      South Carolina    697           Texas A&amp;M 2014-08-28
+## 1047 FBS     648      South Carolina    196       East Carolina 2014-09-06
+## 1048 FBS     648      South Carolina    257             Georgia 2014-09-13
+## 1050 FBS     648      South Carolina    434            Missouri 2014-09-27
+## 1052 FBS     648      South Carolina    244              Furman 2014-10-18
+## 1054 FBS     648      South Carolina    694           Tennessee 2014-11-01
+## 1056 FBS     648      South Carolina    646          South Ala. 2014-11-22
+## 1058 FBS     651          South Fla.    769       Western Caro. 2014-08-30
+## 1059 FBS     651          South Fla.    392            Maryland 2014-09-06
+## 1060 FBS     651          South Fla.    490  North Carolina St. 2014-09-13
+## 1061 FBS     651          South Fla.    164               UConn 2014-09-19
+## 1063 FBS     651          South Fla.    196       East Carolina 2014-10-11
+## 1066 FBS     651          South Fla.    288             Houston 2014-11-01
+## 1069 FBS     651          South Fla.    128                 UCF 2014-11-28
+## 1070 FBS     657 Southern California     96          Fresno St. 2014-08-30
+## 1073 FBS     657 Southern California    528          Oregon St. 2014-09-27
+## 1074 FBS     657 Southern California     28         Arizona St. 2014-10-04
+## 1076 FBS     657 Southern California    157            Colorado 2014-10-18
+## 1079 FBS     657 Southern California    107          California 2014-11-13
+## 1081 FBS     657 Southern California    513          Notre Dame 2014-11-29
+## 1083 FBS     664      Southern Miss.     17              Alcorn 2014-09-06
+## 1085 FBS     664      Southern Miss.     27     Appalachian St. 2014-09-20
+## 1086 FBS     664      Southern Miss.    574                Rice 2014-09-27
+## 1089 FBS     664      Southern Miss.    366      Louisiana Tech 2014-10-25
+## 1091 FBS     664      Southern Miss.    388            Marshall 2014-11-08
+## 1093 FBS     664      Southern Miss.      9                 UAB 2014-11-29
+## 1094 FBS     674            Stanford    108            UC Davis 2014-08-30
+## 1095 FBS     674            Stanford    657 Southern California 2014-09-06
+## 1096 FBS     674            Stanford    725                Army 2014-09-13
+## 1099 FBS     674            Stanford    754      Washington St. 2014-10-10
+## 1101 FBS     674            Stanford    528          Oregon St. 2014-10-25
+## 1103 FBS     674            Stanford    732                Utah 2014-11-15
+## 1106 FBS     688            Syracuse    739           Villanova 2014-08-29
+## 1108 FBS     688            Syracuse    392            Maryland 2014-09-20
+## 1109 FBS     688            Syracuse    513          Notre Dame 2014-09-27
+## 1110 FBS     688            Syracuse    367          Louisville 2014-10-03
+## 1111 FBS     688            Syracuse    234         Florida St. 2014-10-11
+## 1114 FBS     688            Syracuse    490  North Carolina St. 2014-11-01
+## 1115 FBS     688            Syracuse    193                Duke 2014-11-08
+## 1118 FBS     698                 TCU    625             Samford 2014-08-30
+## 1119 FBS     698                 TCU    428           Minnesota 2014-09-13
+## 1121 FBS     698                 TCU    522            Oklahoma 2014-10-04
+## 1123 FBS     698                 TCU    521        Oklahoma St. 2014-10-18
+## 1124 FBS     698                 TCU    700          Texas Tech 2014-10-25
+## 1126 FBS     698                 TCU    327          Kansas St. 2014-11-08
+## 1129 FBS     698                 TCU    311            Iowa St. 2014-12-06
+## 1131 FBS     690              Temple    726                Navy 2014-09-06
+## 1132 FBS     690              Temple    178        Delaware St. 2014-09-20
+## 1134 FBS     690              Temple    719               Tulsa 2014-10-11
+## 1137 FBS     690              Temple    196       East Carolina 2014-11-01
+## 1138 FBS     690              Temple    404             Memphis 2014-11-07
+## 1140 FBS     690              Temple    140          Cincinnati 2014-11-29
+## 1142 FBS     694           Tennessee    731            Utah St. 2014-08-31
+## 1143 FBS     694           Tennessee     30        Arkansas St. 2014-09-06
+## 1146 FBS     694           Tennessee    235             Florida 2014-10-04
+## 1147 FBS     694           Tennessee    693         Chattanooga 2014-10-11
+## 1149 FBS     694           Tennessee      8             Alabama 2014-10-25
+## 1151 FBS     694           Tennessee    334            Kentucky 2014-11-15
+## 1152 FBS     694           Tennessee    434            Missouri 2014-11-22
+## 1154 FBS     703               Texas    497         North Texas 2014-08-30
+## 1155 FBS     703               Texas     77                 BYU 2014-09-06
+## 1156 FBS     703               Texas    110                UCLA 2014-09-13
+## 1158 FBS     703               Texas     51              Baylor 2014-10-04
+## 1159 FBS     703               Texas    522            Oklahoma 2014-10-11
+## 1160 FBS     703               Texas    311            Iowa St. 2014-10-18
+## 1163 FBS     703               Texas    768       West Virginia 2014-11-08
+## 1165 FBS     703               Texas    698                 TCU 2014-11-27
+## 1167 FBS     697           Texas A&amp;M    346               Lamar 2014-09-06
+## 1168 FBS     697           Texas A&amp;M    574                Rice 2014-09-13
+## 1170 FBS     697           Texas A&amp;M     31            Arkansas 2014-09-27
+## 1172 FBS     697           Texas A&amp;M    433            Ole Miss 2014-10-11
+## 1174 FBS     697           Texas A&amp;M    498          La.-Monroe 2014-11-01
+## 1176 FBS     697           Texas A&amp;M    434            Missouri 2014-11-15
+## 1177 FBS     697           Texas A&amp;M    365                 LSU 2014-11-27
+## 1178 FBS     670           Texas St.   2678     Ark.-Pine Bluff 2014-08-30
+## 1179 FBS     670           Texas St.    726                Navy 2014-09-13
+## 1182 FBS     670           Texas St.    295               Idaho 2014-10-04
+## 1183 FBS     670           Texas St.    671       La.-Lafayette 2014-10-14
+## 1186 FBS     670           Texas St.    253        Ga. Southern 2014-11-08
+## 1188 FBS     670           Texas St.     30        Arkansas St. 2014-11-20
+## 1190 FBS     700          Texas Tech   1004        Central Ark. 2014-08-30
+## 1192 FBS     700          Texas Tech     31            Arkansas 2014-09-13
+## 1195 FBS     700          Texas Tech    768       West Virginia 2014-10-11
+## 1196 FBS     700          Texas Tech    328              Kansas 2014-10-18
+## 1198 FBS     700          Texas Tech    703               Texas 2014-11-01
+## 1199 FBS     700          Texas Tech    522            Oklahoma 2014-11-15
+## 1201 FBS     700          Texas Tech     51              Baylor 2014-11-29
+## 1202 FBS     709              Toledo    469       New Hampshire 2014-08-30
+## 1203 FBS     709              Toledo    434            Missouri 2014-09-06
+## 1205 FBS     709              Toledo     47            Ball St. 2014-09-20
+## 1206 FBS     709              Toledo    129       Central Mich. 2014-09-27
+## 1209 FBS     709              Toledo    400       Massachusetts 2014-10-25
+## 1212 FBS     709              Toledo     71       Bowling Green 2014-11-19
+## 1215 FBS     716                Troy    193                Duke 2014-09-06
+## 1216 FBS     716                Troy      2   Abilene Christian 2014-09-13
+## 1219 FBS     716                Troy    472      New Mexico St. 2014-10-11
+## 1220 FBS     716                Troy     27     Appalachian St. 2014-10-18
+## 1223 FBS     716                Troy    254         Georgia St. 2014-11-08
+## 1225 FBS     716                Troy    671       La.-Lafayette 2014-11-29
+## 1227 FBS     718              Tulane    255        Georgia Tech 2014-09-06
+## 1228 FBS     718              Tulane    655    Southeastern La. 2014-09-13
+## 1231 FBS     718              Tulane    164               UConn 2014-10-11
+## 1233 FBS     718              Tulane    140          Cincinnati 2014-10-31
+## 1235 FBS     718              Tulane    404             Memphis 2014-11-15
+## 1237 FBS     718              Tulane    690              Temple 2014-12-06
+## 1238 FBS     719               Tulsa    718              Tulane 2014-08-28
+## 1239 FBS     719               Tulsa    522            Oklahoma 2014-09-06
+## 1241 FBS     719               Tulsa    670           Texas St. 2014-09-27
+## 1244 FBS     719               Tulsa    651          South Fla. 2014-10-18
+## 1246 FBS     719               Tulsa    663                 SMU 2014-11-08
+## 1249 FBS     719               Tulsa    196       East Carolina 2014-11-28
+## 1250 FBS       9                 UAB    716                Troy 2014-08-30
+## 1252 FBS       9                 UAB      6         Alabama A&amp;M 2014-09-13
+## 1253 FBS       9                 UAB    231                 FIU 2014-09-27
+## 1255 FBS       9                 UAB    497         North Texas 2014-10-11
+## 1259 FBS       9                 UAB    366      Louisiana Tech 2014-11-08
+## 1260 FBS       9                 UAB    388            Marshall 2014-11-22
+## 1262 FBS     128                 UCF    539            Penn St. 2014-08-30
+## 1264 FBS     128                 UCF     61     Bethune-Cookman 2014-09-20
+## 1266 FBS     128                 UCF     77                 BYU 2014-10-09
+## 1267 FBS     128                 UCF    718              Tulane 2014-10-18
+## 1268 FBS     128                 UCF    690              Temple 2014-10-25
+## 1270 FBS     128                 UCF    719               Tulsa 2014-11-14
+## 1271 FBS     128                 UCF    663                 SMU 2014-11-22
+## 1275 FBS     110                UCLA    404             Memphis 2014-09-06
+## 1276 FBS     110                UCLA    703               Texas 2014-09-13
+## 1278 FBS     110                UCLA    732                Utah 2014-10-04
+## 1279 FBS     110                UCLA    529              Oregon 2014-10-11
+## 1282 FBS     110                UCLA     29             Arizona 2014-11-01
+## 1284 FBS     110                UCLA    657 Southern California 2014-11-22
+## 1285 FBS     110                UCLA    674            Stanford 2014-11-28
+## 1286 FBS     164               UConn     77                 BYU 2014-08-29
+## 1287 FBS     164               UConn    683         Stony Brook 2014-09-06
+## 1288 FBS     164               UConn     66           Boise St. 2014-09-13
+## 1290 FBS     164               UConn    690              Temple 2014-09-27
+## 1293 FBS     164               UConn    128                 UCF 2014-11-01
+## 1294 FBS     164               UConn    725                Army 2014-11-08
+## 1295 FBS     164               UConn    140          Cincinnati 2014-11-22
+## 1297 FBS     164               UConn    663                 SMU 2014-12-06
+## 1299 FBS     465                UNLV    502      Northern Colo. 2014-09-06
+## 1300 FBS     465                UNLV    503       Northern Ill. 2014-09-13
+## 1304 FBS     465                UNLV     96          Fresno St. 2014-10-10
+## 1306 FBS     465                UNLV    473          New Mexico 2014-11-01
+## 1307 FBS     465                UNLV    721           Air Force 2014-11-08
+## 1310 FBS     465                UNLV    466              Nevada 2014-11-29
+## 1312 FBS     704                UTEP    700          Texas Tech 2014-09-06
+## 1313 FBS     704                UTEP    472      New Mexico St. 2014-09-13
+## 1316 FBS     704                UTEP    523        Old Dominion 2014-10-11
+## 1318 FBS     704                UTEP    664      Southern Miss. 2014-11-01
+## 1320 FBS     704                UTEP    497         North Texas 2014-11-15
+## 1322 FBS     704                UTEP    419        Middle Tenn. 2014-11-29
+## 1323 FBS     732                Utah    294           Idaho St. 2014-08-28
+## 1324 FBS     732                Utah     96          Fresno St. 2014-09-06
+## 1326 FBS     732                Utah    754      Washington St. 2014-09-27
+## 1329 FBS     732                Utah    657 Southern California 2014-10-25
+## 1331 FBS     732                Utah    529              Oregon 2014-11-08
+## 1333 FBS     732                Utah     29             Arizona 2014-11-22
+## 1336 FBS     731            Utah St.    294           Idaho St. 2014-09-06
+## 1337 FBS     731            Utah St.    749         Wake Forest 2014-09-13
+## 1340 FBS     731            Utah St.    721           Air Force 2014-10-11
+## 1342 FBS     731            Utah St.    465                UNLV 2014-10-25
+## 1345 FBS     731            Utah St.    473          New Mexico 2014-11-15
+## 1346 FBS     731            Utah St.    630        San Jose St. 2014-11-21
+## 1348 FBS     736          Vanderbilt    690              Temple 2014-08-28
+## 1349 FBS     736          Vanderbilt    433            Ole Miss 2014-09-06
+## 1350 FBS     736          Vanderbilt    400       Massachusetts 2014-09-13
+## 1351 FBS     736          Vanderbilt    648      South Carolina 2014-09-20
+## 1354 FBS     736          Vanderbilt     48      Charleston So. 2014-10-11
+## 1356 FBS     736          Vanderbilt    523        Old Dominion 2014-11-01
+## 1357 FBS     736          Vanderbilt    235             Florida 2014-11-08
+## 1359 FBS     736          Vanderbilt    694           Tennessee 2014-11-29
+## 1360 FBS     746            Virginia    110                UCLA 2014-08-30
+## 1361 FBS     746            Virginia    575            Richmond 2014-09-06
+## 1362 FBS     746            Virginia    367          Louisville 2014-09-13
+## 1364 FBS     746            Virginia    331            Kent St. 2014-09-27
+## 1365 FBS     746            Virginia    545          Pittsburgh 2014-10-04
+## 1367 FBS     746            Virginia    457      North Carolina 2014-10-25
+## 1370 FBS     746            Virginia    415          Miami (FL) 2014-11-22
+## 1372 FBS     742       Virginia Tech    786      William &amp; Mary 2014-08-30
+## 1374 FBS     742       Virginia Tech    196       East Carolina 2014-09-13
+## 1375 FBS     742       Virginia Tech    255        Georgia Tech 2014-09-20
+## 1376 FBS     742       Virginia Tech    774       Western Mich. 2014-09-27
+## 1379 FBS     742       Virginia Tech    415          Miami (FL) 2014-10-23
+## 1380 FBS     742       Virginia Tech     67      Boston College 2014-11-01
+## 1383 FBS     742       Virginia Tech    746            Virginia 2014-11-28
+## 1385 FBS     749         Wake Forest   1092        Gardner-Webb 2014-09-06
+## 1387 FBS     749         Wake Forest    725                Army 2014-09-20
+## 1390 FBS     749         Wake Forest    688            Syracuse 2014-10-18
+## 1391 FBS     749         Wake Forest     67      Boston College 2014-10-25
+## 1392 FBS     749         Wake Forest    147             Clemson 2014-11-06
+## 1394 FBS     749         Wake Forest    742       Virginia Tech 2014-11-22
+## 1397 FBS     756          Washington    207       Eastern Wash. 2014-09-06
+## 1398 FBS     756          Washington    301            Illinois 2014-09-13
+## 1399 FBS     756          Washington    254         Georgia St. 2014-09-20
+## 1400 FBS     756          Washington    674            Stanford 2014-09-27
+## 1403 FBS     756          Washington     28         Arizona St. 2014-10-25
+## 1405 FBS     756          Washington    110                UCLA 2014-11-08
+## 1407 FBS     756          Washington    528          Oregon St. 2014-11-22
+## 1409 FBS     754      Washington St.    587             Rutgers 2014-08-28
+## 1411 FBS     754      Washington St.    550        Portland St. 2014-09-13
+## 1412 FBS     754      Washington St.    529              Oregon 2014-09-20
+## 1414 FBS     754      Washington St.    107          California 2014-10-04
+## 1416 FBS     754      Washington St.     29             Arizona 2014-10-25
+## 1417 FBS     754      Washington St.    657 Southern California 2014-11-01
+## 1420 FBS     754      Washington St.    756          Washington 2014-11-29
+## 1421 FBS     768       West Virginia      8             Alabama 2014-08-30
+## 1422 FBS     768       West Virginia    711              Towson 2014-09-06
+## 1424 FBS     768       West Virginia    522            Oklahoma 2014-09-20
+## 1425 FBS     768       West Virginia    328              Kansas 2014-10-04
+## 1427 FBS     768       West Virginia     51              Baylor 2014-10-18
+## 1429 FBS     768       West Virginia    698                 TCU 2014-11-01
+## 1431 FBS     768       West Virginia    327          Kansas St. 2014-11-20
+## 1433 FBS     772         Western Ky.     71       Bowling Green 2014-08-29
+## 1437 FBS     772         Western Ky.      9                 UAB 2014-10-04
+## 1439 FBS     772         Western Ky.    523        Old Dominion 2014-10-25
+## 1441 FBS     772         Western Ky.    704                UTEP 2014-11-08
+## 1442 FBS     772         Western Ky.    725                Army 2014-11-15
+## 1443 FBS     772         Western Ky.    706                UTSA 2014-11-22
+## 1447 FBS     774       Western Mich.    454          Murray St. 2014-09-20
+## 1449 FBS     774       Western Mich.    709              Toledo 2014-10-04
+## 1452 FBS     774       Western Mich.    519                Ohio 2014-10-25
+## 1454 FBS     774       Western Mich.    204       Eastern Mich. 2014-11-15
+## 1456 FBS     774       Western Mich.    503       Northern Ill. 2014-11-28
+## 1457 FBS     796           Wisconsin    365                 LSU 2014-08-30
+## 1458 FBS     796           Wisconsin    771        Western Ill. 2014-09-06
+## 1459 FBS     796           Wisconsin     71       Bowling Green 2014-09-20
+## 1460 FBS     796           Wisconsin    651          South Fla. 2014-09-27
+## 1462 FBS     796           Wisconsin    301            Illinois 2014-10-11
+## 1463 FBS     796           Wisconsin    392            Maryland 2014-10-25
+## 1466 FBS     796           Wisconsin    463            Nebraska 2014-11-15
+## 1468 FBS     796           Wisconsin    428           Minnesota 2014-11-29
+## 1469 FBS     811             Wyoming    441             Montana 2014-08-30
+## 1470 FBS     811             Wyoming    721           Air Force 2014-09-06
+## 1472 FBS     811             Wyoming    229       Fla. Atlantic 2014-09-20
+## 1475 FBS     811             Wyoming    630        San Jose St. 2014-10-18
+## 1478 FBS     811             Wyoming    731            Utah St. 2014-11-07
+## 1479 FBS     811             Wyoming     66           Boise St. 2014-11-22
+##      Location
+## 1        Home
+## 4        Home
+## 5        Home
+## 7        Home
+## 10       Home
+## 12       Home
+## 13       Home
+## 15       Home
+## 17       Home
+## 18       Home
+## 21       Home
+## 23       Home
+## 25    Neutral
+## 26       Home
+## 27       Home
+## 28       Home
+## 31       Home
+## 34       Home
+## 35       Home
+## 36       Home
+## 37       Home
+## 39       Home
+## 40       Home
+## 42       Home
+## 45       Home
+## 46       Home
+## 48       Home
+## 49       Home
+## 52       Home
+## 54       Home
+## 56       Home
+## 57       Home
+## 59       Home
+## 62       Home
+## 64       Home
+## 65    Neutral
+## 66       Home
+## 67       Home
+## 68       Home
+## 70       Home
+## 71       Home
+## 73       Home
+## 76       Home
+## 77       Home
+## 81       Home
+## 82       Home
+## 84       Home
+## 85       Home
+## 89       Home
+## 90       Home
+## 92       Home
+## 93    Neutral
+## 95       Home
+## 96    Neutral
+## 97       Home
+## 98       Home
+## 100      Home
+## 101      Home
+## 103      Home
+## 105      Home
+## 107      Home
+## 111      Home
+## 112      Home
+## 113      Home
+## 115      Home
+## 118      Home
+## 119      Home
+## 121      Home
+## 123      Home
+## 126      Home
+## 128      Home
+## 129      Home
+## 131      Home
+## 133      Home
+## 134      Home
+## 138      Home
+## 140      Home
+## 142      Home
+## 143   Neutral
+## 144      Home
+## 145   Neutral
+## 146      Home
+## 148      Home
+## 151      Home
+## 152      Home
+## 154      Home
+## 156      Home
+## 158      Home
+## 159      Home
+## 160      Home
+## 161      Home
+## 163      Home
+## 166      Home
+## 168      Home
+## 170      Home
+## 171      Home
+## 174      Home
+## 176      Home
+## 178      Home
+## 180      Home
+## 181      Home
+## 183      Home
+## 184      Home
+## 185      Home
+## 188      Home
+## 190      Home
+## 191      Home
+## 194      Home
+## 196      Home
+## 198      Home
+## 199      Home
+## 200   Neutral
+## 203      Home
+## 204      Home
+## 205      Home
+## 207      Home
+## 210      Home
+## 212      Home
+## 215      Home
+## 216      Home
+## 217      Home
+## 218      Home
+## 220      Home
+## 223      Home
+## 225      Home
+## 228      Home
+## 230      Home
+## 232      Home
+## 233      Home
+## 234      Home
+## 236      Home
+## 239      Home
+## 240      Home
+## 241   Neutral
+## 243      Home
+## 244      Home
+## 246      Home
+## 248      Home
+## 249      Home
+## 252      Home
+## 253   Neutral
+## 255      Home
+## 257      Home
+## 259      Home
+## 260      Home
+## 262      Home
+## 263      Home
+## 265      Home
+## 267      Home
+## 268      Home
+## 271      Home
+## 274      Home
+## 275      Home
+## 276      Home
+## 277      Home
+## 280      Home
+## 281      Home
+## 283      Home
+## 286      Home
+## 288      Home
+## 289      Home
+## 294      Home
+## 296      Home
+## 297      Home
+## 300      Home
+## 301      Home
+## 302      Home
+## 303      Home
+## 304      Home
+## 306      Home
+## 308      Home
+## 309      Home
+## 311      Home
+## 315      Home
+## 317      Home
+## 319      Home
+## 321      Home
+## 324      Home
+## 325      Home
+## 326      Home
+## 327      Home
+## 330      Home
+## 331      Home
+## 332   Neutral
+## 334      Home
+## 335      Home
+## 337   Neutral
+## 338      Home
+## 339      Home
+## 341      Home
+## 343      Home
+## 345      Home
+## 347      Home
+## 348      Home
+## 351      Home
+## 352      Home
+## 354      Home
+## 357      Home
+## 358      Home
+## 360      Home
+## 361      Home
+## 363      Home
+## 364      Home
+## 365      Home
+## 368   Neutral
+## 370      Home
+## 371      Home
+## 372      Home
+## 373      Home
+## 375      Home
+## 377      Home
+## 378      Home
+## 381      Home
+## 383      Home
+## 385      Home
+## 386      Home
+## 387      Home
+## 390      Home
+## 392      Home
+## 393      Home
+## 396      Home
+## 398      Home
+## 399      Home
+## 401      Home
+## 402      Home
+## 404      Home
+## 406      Home
+## 407      Home
+## 412      Home
+## 414      Home
+## 417      Home
+## 418      Home
+## 420      Home
+## 422      Home
+## 423      Home
+## 425      Home
+## 427      Home
+## 429      Home
+## 431      Home
+## 432      Home
+## 434      Home
+## 437      Home
+## 438      Home
+## 440      Home
+## 442      Home
+## 445      Home
+## 446      Home
+## 447      Home
+## 448      Home
+## 451      Home
+## 453      Home
+## 456      Home
+## 457      Home
+## 458      Home
+## 459      Home
+## 461      Home
+## 463      Home
+## 465      Home
+## 467      Home
+## 468      Home
+## 470      Home
+## 472      Home
+## 473      Home
+## 475      Home
+## 478      Home
+## 479      Home
+## 482      Home
+## 484      Home
+## 485      Home
+## 486      Home
+## 488      Home
+## 489      Home
+## 492      Home
+## 494      Home
+## 495      Home
+## 499      Home
+## 500      Home
+## 502      Home
+## 505      Home
+## 506      Home
+## 507      Home
+## 509      Home
+## 510      Home
+## 511      Home
+## 513      Home
+## 515      Home
+## 518   Neutral
+## 519      Home
+## 520      Home
+## 521      Home
+## 522      Home
+## 525      Home
+## 526      Home
+## 527      Home
+## 530      Home
+## 531      Home
+## 534      Home
+## 536      Home
+## 537      Home
+## 540      Home
+## 542      Home
+## 543      Home
+## 545      Home
+## 548      Home
+## 551      Home
+## 557      Home
+## 559      Home
+## 560      Home
+## 562      Home
+## 565      Home
+## 566      Home
+## 567      Home
+## 570      Home
+## 573      Home
+## 574      Home
+## 577      Home
+## 579      Home
+## 580      Home
+## 583      Home
+## 585      Home
+## 587      Home
+## 589      Home
+## 590      Home
+## 592      Home
+## 595      Home
+## 596      Home
+## 599      Home
+## 601      Home
+## 602      Home
+## 603      Home
+## 606      Home
+## 609      Home
+## 611      Home
+## 613      Home
+## 614      Home
+## 616      Home
+## 619      Home
+## 621      Home
+## 624      Home
+## 625      Home
+## 627      Home
+## 628      Home
+## 630      Home
+## 632      Home
+## 634      Home
+## 635      Home
+## 637      Home
+## 638      Home
+## 639      Home
+## 643      Home
+## 646      Home
+## 647      Home
+## 649      Home
+## 650      Home
+## 652      Home
+## 653      Home
+## 654      Home
+## 656      Home
+## 658      Home
+## 660      Home
+## 662      Home
+## 664      Home
+## 665      Home
+## 666      Home
+## 669      Home
+## 670      Home
+## 672      Home
+## 674      Home
+## 676      Home
+## 679      Home
+## 681      Home
+## 682      Home
+## 684      Home
+## 686      Home
+## 687      Home
+## 689      Home
+## 691      Home
+## 692      Home
+## 694      Home
+## 695      Home
+## 698      Home
+## 699      Home
+## 702      Home
+## 703      Home
+## 705      Home
+## 706      Home
+## 708      Home
+## 710      Home
+## 712      Home
+## 713      Home
+## 715      Home
+## 717      Home
+## 718      Home
+## 721      Home
+## 722   Neutral
+## 725      Home
+## 726      Home
+## 728      Home
+## 729      Home
+## 730   Neutral
+## 731      Home
+## 733   Neutral
+## 734      Home
+## 735      Home
+## 737      Home
+## 738      Home
+## 741      Home
+## 742      Home
+## 744      Home
+## 746      Home
+## 747      Home
+## 750      Home
+## 751      Home
+## 754      Home
+## 756      Home
+## 758      Home
+## 759      Home
+## 761      Home
+## 763      Home
+## 766      Home
+## 769      Home
+## 770      Home
+## 773      Home
+## 775      Home
+## 778      Home
+## 779      Home
+## 780      Home
+## 782      Home
+## 783      Home
+## 786      Home
+## 788      Home
+## 791      Home
+## 793      Home
+## 794      Home
+## 795      Home
+## 797      Home
+## 798      Home
+## 800      Home
+## 803      Home
+## 804      Home
+## 807      Home
+## 808      Home
+## 809      Home
+## 812      Home
+## 814      Home
+## 816      Home
+## 818      Home
+## 822      Home
+## 823      Home
+## 824      Home
+## 827      Home
+## 830      Home
+## 831      Home
+## 832      Home
+## 834      Home
+## 836      Home
+## 838      Home
+## 841      Home
+## 842      Home
+## 843      Home
+## 844   Neutral
+## 845   Neutral
+## 846      Home
+## 847      Home
+## 849   Neutral
+## 851      Home
+## 852      Home
+## 857      Home
+## 858      Home
+## 860      Home
+## 861      Home
+## 863      Home
+## 864      Home
+## 866   Neutral
+## 867      Home
+## 868      Home
+## 869      Home
+## 871      Home
+## 873      Home
+## 876      Home
+## 877      Home
+## 878      Home
+## 880      Home
+## 883   Neutral
+## 884      Home
+## 886      Home
+## 888      Home
+## 889      Home
+## 890   Neutral
+## 891      Home
+## 892      Home
+## 893      Home
+## 894      Home
+## 897      Home
+## 899      Home
+## 902   Neutral
+## 903   Neutral
+## 904      Home
+## 905      Home
+## 906      Home
+## 908      Home
+## 910      Home
+## 911      Home
+## 913      Home
+## 914      Home
+## 915      Home
+## 916      Home
+## 918      Home
+## 920      Home
+## 921   Neutral
+## 922      Home
+## 924      Home
+## 926      Home
+## 928      Home
+## 931      Home
+## 933      Home
+## 934      Home
+## 935      Home
+## 937      Home
+## 938   Neutral
+## 939      Home
+## 941      Home
+## 942      Home
+## 944      Home
+## 945      Home
+## 947      Home
+## 949      Home
+## 950      Home
+## 953      Home
+## 954      Home
+## 956      Home
+## 957      Home
+## 958      Home
+## 960      Home
+## 962      Home
+## 963      Home
+## 964   Neutral
+## 965      Home
+## 966      Home
+## 968      Home
+## 971      Home
+## 972      Home
+## 976      Home
+## 978      Home
+## 980      Home
+## 982      Home
+## 984      Home
+## 986   Neutral
+## 987      Home
+## 988      Home
+## 990      Home
+## 991      Home
+## 994      Home
+## 995      Home
+## 1000     Home
+## 1001     Home
+## 1003     Home
+## 1004     Home
+## 1006     Home
+## 1008     Home
+## 1010     Home
+## 1013     Home
+## 1016     Home
+## 1018     Home
+## 1020     Home
+## 1021     Home
+## 1022     Home
+## 1025     Home
+## 1026     Home
+## 1029     Home
+## 1031     Home
+## 1035     Home
+## 1036     Home
+## 1039     Home
+## 1040     Home
+## 1043     Home
+## 1045     Home
+## 1046     Home
+## 1047     Home
+## 1048     Home
+## 1050     Home
+## 1052     Home
+## 1054     Home
+## 1056     Home
+## 1058     Home
+## 1059     Home
+## 1060     Home
+## 1061     Home
+## 1063     Home
+## 1066     Home
+## 1069     Home
+## 1070     Home
+## 1073     Home
+## 1074     Home
+## 1076     Home
+## 1079     Home
+## 1081     Home
+## 1083     Home
+## 1085     Home
+## 1086     Home
+## 1089     Home
+## 1091     Home
+## 1093     Home
+## 1094     Home
+## 1095     Home
+## 1096     Home
+## 1099     Home
+## 1101     Home
+## 1103     Home
+## 1106     Home
+## 1108     Home
+## 1109  Neutral
+## 1110     Home
+## 1111     Home
+## 1114     Home
+## 1115     Home
+## 1118     Home
+## 1119     Home
+## 1121     Home
+## 1123     Home
+## 1124     Home
+## 1126     Home
+## 1129     Home
+## 1131     Home
+## 1132     Home
+## 1134     Home
+## 1137     Home
+## 1138     Home
+## 1140     Home
+## 1142     Home
+## 1143     Home
+## 1146     Home
+## 1147     Home
+## 1149     Home
+## 1151     Home
+## 1152     Home
+## 1154     Home
+## 1155     Home
+## 1156  Neutral
+## 1158     Home
+## 1159  Neutral
+## 1160     Home
+## 1163     Home
+## 1165     Home
+## 1167     Home
+## 1168     Home
+## 1170  Neutral
+## 1172     Home
+## 1174     Home
+## 1176     Home
+## 1177     Home
+## 1178     Home
+## 1179     Home
+## 1182     Home
+## 1183     Home
+## 1186     Home
+## 1188     Home
+## 1190     Home
+## 1192     Home
+## 1195     Home
+## 1196     Home
+## 1198     Home
+## 1199     Home
+## 1201  Neutral
+## 1202     Home
+## 1203     Home
+## 1205     Home
+## 1206     Home
+## 1209     Home
+## 1212     Home
+## 1215     Home
+## 1216     Home
+## 1219     Home
+## 1220     Home
+## 1223     Home
+## 1225     Home
+## 1227     Home
+## 1228     Home
+## 1231     Home
+## 1233     Home
+## 1235     Home
+## 1237     Home
+## 1238     Home
+## 1239     Home
+## 1241     Home
+## 1244     Home
+## 1246     Home
+## 1249     Home
+## 1250     Home
+## 1252     Home
+## 1253     Home
+## 1255     Home
+## 1259     Home
+## 1260     Home
+## 1262  Neutral
+## 1264     Home
+## 1266     Home
+## 1267     Home
+## 1268     Home
+## 1270     Home
+## 1271     Home
+## 1275     Home
+## 1276  Neutral
+## 1278     Home
+## 1279     Home
+## 1282     Home
+## 1284     Home
+## 1285     Home
+## 1286     Home
+## 1287     Home
+## 1288     Home
+## 1290     Home
+## 1293     Home
+## 1294  Neutral
+## 1295     Home
+## 1297     Home
+## 1299     Home
+## 1300     Home
+## 1304     Home
+## 1306     Home
+## 1307     Home
+## 1310     Home
+## 1312     Home
+## 1313     Home
+## 1316     Home
+## 1318     Home
+## 1320     Home
+## 1322     Home
+## 1323     Home
+## 1324     Home
+## 1326     Home
+## 1329     Home
+## 1331     Home
+## 1333     Home
+## 1336     Home
+## 1337     Home
+## 1340     Home
+## 1342     Home
+## 1345     Home
+## 1346     Home
+## 1348     Home
+## 1349  Neutral
+## 1350     Home
+## 1351     Home
+## 1354     Home
+## 1356     Home
+## 1357     Home
+## 1359     Home
+## 1360     Home
+## 1361     Home
+## 1362     Home
+## 1364     Home
+## 1365     Home
+## 1367     Home
+## 1370     Home
+## 1372     Home
+## 1374     Home
+## 1375     Home
+## 1376     Home
+## 1379     Home
+## 1380     Home
+## 1383     Home
+## 1385     Home
+## 1387     Home
+## 1390     Home
+## 1391     Home
+## 1392     Home
+## 1394     Home
+## 1397     Home
+## 1398     Home
+## 1399     Home
+## 1400     Home
+## 1403     Home
+## 1405     Home
+## 1407     Home
+## 1409  Neutral
+## 1411     Home
+## 1412     Home
+## 1414     Home
+## 1416     Home
+## 1417     Home
+## 1420     Home
+## 1421  Neutral
+## 1422     Home
+## 1424     Home
+## 1425     Home
+## 1427     Home
+## 1429     Home
+## 1431     Home
+## 1433     Home
+## 1437     Home
+## 1439     Home
+## 1441     Home
+## 1442     Home
+## 1443     Home
+## 1447     Home
+## 1449     Home
+## 1452     Home
+## 1454     Home
+## 1456     Home
+## 1457  Neutral
+## 1458     Home
+## 1459     Home
+## 1460     Home
+## 1462     Home
+## 1463     Home
+## 1466     Home
+## 1468     Home
+## 1469     Home
+## 1470     Home
+## 1472     Home
+## 1475     Home
+## 1478     Home
+## 1479     Home
+</code></pre>
+
+</body>
+
+</html>
+

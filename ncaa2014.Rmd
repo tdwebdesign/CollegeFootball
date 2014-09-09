@@ -1,0 +1,25 @@
+# NCAA 2014 
+
+
+Download schedule data.
+
+```{r}
+theurl <- "http://fs.ncaa.org/Docs/stats/football_records/sched/2014/fbs.csv"
+thefile <- "fbs2014schedule.csv"
+if(!file.exists(thefile)) {
+download.file(theurl, destfile=thefile)
+}
+
+```
+
+read in data.  process, transform into tidy data for processing.
+
+```{r}
+data <- read.csv(thefile)
+data$Date <- as.Date(data$Date, "%m/%d/%Y")
+data <- data[!data$Div == "",]
+neutral
+data <- data[data$Location == "Home" | data$Location == "Neutral",]
+data
+```
+
